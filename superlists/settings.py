@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cc)(#o5#al$m=1t4w)5gk=ncka37mbz*am-t*oi=$t$@2&6n-)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+TEMPLATE_DEBUG = DEBUG
+
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.ironcpa.net']
 
 
 # Application definition
