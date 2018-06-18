@@ -16,7 +16,7 @@ class FunctionalTest(StaticLiveServerTestCase):
                 try:
                     return fn(*args, **kwargs)
                 except (AssertionError, WebDriverException) as e:
-                    if time.item() - start_time > MAX_WAIT:
+                    if time.time() - start_time > MAX_WAIT:
                         raise e
                     time.sleep(0.5)
         return modifed_fn
@@ -27,9 +27,9 @@ class FunctionalTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
-        staging_server = os.environ.get('STAGING_SERVER')
-        if staging_server:
-            self.live_server_url = 'http://' + staging_server
+        self.staging_server = os.environ.get('STAGING_SERVER')
+        if self.staging_server:
+            self.live_server_url = 'http://' + self.staging_server
 
     def tearDown(self):
         self.browser.quit()
