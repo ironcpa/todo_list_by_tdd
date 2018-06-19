@@ -22,4 +22,5 @@ eg, on Ubuntu:
 
 * see gunicorn-systemd.template.service
 * replace SITENAME with, e.g., staging.my-domain.com
+* replace SEKRET with email password
 
