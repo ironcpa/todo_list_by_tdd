@@ -4,3 +4,4 @@ __pycache__
 *.pyc
 *.swp
 tags
+functional_tests/screendumps/
